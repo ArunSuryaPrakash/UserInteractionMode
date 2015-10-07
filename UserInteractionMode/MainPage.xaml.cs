@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +26,14 @@ namespace UserInteractionModeSample
         public MainPage()
         {
             this.InitializeComponent();
+            if (UIViewSettings.GetForCurrentView().UserInteractionMode == Windows.UI.ViewManagement.UserInteractionMode.Mouse)
+            {
+                VisualStateManager.GoToState(this, "MouseMode", true);
+            }
+            else
+            {
+                VisualStateManager.GoToState(this, "TouchMode", true);
+            }
         }
     }
 }

@@ -11,8 +11,7 @@
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
 
-                <!-- Connected State -->
-                <VisualState x:Name="ConnectedState">
+                <VisualState x:Name="TouchMode">
                     <VisualState.StateTriggers>
                         <local:UserInteractionTrigger IsInMouseMode="False" />
                     </VisualState.StateTriggers>
@@ -21,8 +20,7 @@
                     </VisualState.Setters>
                 </VisualState>
 
-                <!-- Offline State -->
-                <VisualState x:Name="OfflineState">
+                <VisualState x:Name="MouseMode">
                     <VisualState.StateTriggers>
                         <local:UserInteractionTrigger IsInMouseMode="True" />
                     </VisualState.StateTriggers>
@@ -39,7 +37,7 @@
                 VerticalAlignment="Center">
 
             <TextBlock x:Name="StatusText" 
-                 Text="You are in Mouse Mode" 
+                 Text="" 
                  FontSize="24" FontWeight="Light" />
         </StackPanel>
     </Grid>
