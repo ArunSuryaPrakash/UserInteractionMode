@@ -26,6 +26,7 @@ namespace UserInteractionModeSample
         public MainPage()
         {
             this.InitializeComponent();
+            
             if (UIViewSettings.GetForCurrentView().UserInteractionMode == Windows.UI.ViewManagement.UserInteractionMode.Mouse)
             {
                 VisualStateManager.GoToState(this, "MouseMode", true);
